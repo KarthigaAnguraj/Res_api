@@ -1,0 +1,708 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Table Turn - Customer</title>
+
+    <link
+        rel="stylesheet"
+        href="/customer.css">
+
+</head>
+
+
+<body>
+
+    <!-- =====================================
+         SIDEBAR
+    ====================================== -->
+
+    <aside class="sidebar">
+
+        <div class="brand">
+
+            <div class="brand-logo">
+                TT
+            </div>
+
+            <div>
+
+                <h2>Table Turn</h2>
+
+                <p>
+                    Restaurant
+                </p>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-item active"
+                onclick="showCustomerPage('home')">
+
+                <span>⌂</span>
+                Home
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showCustomerPage('reserve')">
+
+                <span>▣</span>
+                Reserve Table
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showCustomerPage('reservations')">
+
+                <span>◷</span>
+                My Reservations
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showCustomerPage('order')">
+
+                <span>🛒</span>
+                Order Food
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showCustomerPage('orders')">
+
+                <span>☰</span>
+                My Orders
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="customer-profile">
+
+                <div class="profile-icon">
+                    C
+                </div>
+
+                <div>
+
+                    <strong>
+                        Customer
+                    </strong>
+
+                    <small>
+                        Guest User
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- =====================================
+         MAIN CONTENT
+    ====================================== -->
+
+    <main class="main-content">
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Welcome
+                </h1>
+
+                <p id="pageSubtitle">
+                    Welcome to Table Turn
+                </p>
+
+            </div>
+
+
+            <div class="restaurant-name">
+
+                <div class="restaurant-icon">
+                    TT
+                </div>
+
+                <div>
+
+                    <strong>
+                        Table Turn
+                    </strong>
+
+                    <small>
+                        Customer Portal
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+        <!-- =================================
+             HOME PAGE
+        ================================== -->
+
+        <section
+            id="homePage"
+            class="page">
+
+            <div class="hero-card">
+
+                <div>
+
+                    <p class="hero-small">
+                        Welcome to
+                    </p>
+
+                    <h2>
+                        Table Turn
+                    </h2>
+
+                    <p>
+                        Reserve your table and enjoy
+                        your favourite food.
+                    </p>
+
+                    <button
+                        class="primary-btn"
+                        onclick="showCustomerPage('reserve')">
+
+                        Reserve a Table
+
+                    </button>
+
+                </div>
+
+                <div class="hero-icon">
+                    🍽️
+                </div>
+
+            </div>
+
+
+            <h2 class="section-title">
+                What would you like to do?
+            </h2>
+
+
+            <div class="action-grid">
+
+                <div
+                    class="action-card"
+                    onclick="showCustomerPage('reserve')">
+
+                    <div class="action-icon">
+                        📅
+                    </div>
+
+                    <h3>
+                        Reserve a Table
+                    </h3>
+
+                    <p>
+                        Book a table for your visit.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="action-card"
+                    onclick="showCustomerPage('reservations')">
+
+                    <div class="action-icon">
+                        🗓️
+                    </div>
+
+                    <h3>
+                        My Reservations
+                    </h3>
+
+                    <p>
+                        View your table reservations.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="action-card"
+                    onclick="showCustomerPage('order')">
+
+                    <div class="action-icon">
+                        🍔
+                    </div>
+
+                    <h3>
+                        Order Food
+                    </h3>
+
+                    <p>
+                        Place an order for your table.
+                    </p>
+
+                </div>
+
+
+                <div
+                    class="action-card"
+                    onclick="showCustomerPage('orders')">
+
+                    <div class="action-icon">
+                        🧾
+                    </div>
+
+                    <h3>
+                        My Orders
+                    </h3>
+
+                    <p>
+                        View your previous orders.
+                    </p>
+
+                </div>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             RESERVE TABLE PAGE
+        ================================== -->
+
+        <section
+            id="reservePage"
+            class="page hidden">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Reserve a Table
+                    </h2>
+
+                    <p>
+                        Choose your table and reservation time.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <div class="form-grid">
+
+                    <div class="form-group">
+
+                        <label>
+                            Customer Name
+                        </label>
+
+                        <input
+                            type="text"
+                            id="customerName"
+                            placeholder="Enter your name">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Number of People
+                        </label>
+
+                        <input
+                            type="number"
+                            id="partySize"
+                            min="1"
+                            placeholder="Example: 4">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Table
+                        </label>
+
+                        <select id="reservationTableId">
+
+                            <option value="">
+                                Select Table
+                            </option>
+
+                        </select>
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            Start Time
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="startTime">
+
+                    </div>
+
+
+                    <div class="form-group">
+
+                        <label>
+                            End Time
+                        </label>
+
+                        <input
+                            type="datetime-local"
+                            id="endTime">
+
+                    </div>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        class="primary-btn"
+                        onclick="createCustomerReservation()">
+
+                        Reserve Table
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>
+                    Reservation information
+                </strong>
+
+                <p>
+                    The selected table must have enough
+                    capacity and must not already be
+                    reserved for the selected time.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             RESERVATIONS PAGE
+        ================================== -->
+
+        <section
+            id="reservationsPage"
+            class="page hidden">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        My Reservations
+                    </h2>
+
+                    <p>
+                        Your restaurant reservations.
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="showCustomerPage('reserve')">
+
+                    + New Reservation
+
+                </button>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Table</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>People</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="customerReservationBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ORDER PAGE
+        ================================== -->
+
+        <section
+            id="orderPage"
+            class="page hidden">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Order Food
+                    </h2>
+
+                    <p>
+                        Place an order for an occupied table.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="form-card">
+
+                <div class="form-group">
+
+                    <label>
+                        Table
+                    </label>
+
+                    <select id="orderTableId">
+
+                        <option value="">
+                            Select your table
+                        </option>
+
+                    </select>
+
+                </div>
+
+
+                <div class="items-header">
+
+                    <h3>
+                        Food Items
+                    </h3>
+
+                    <button
+                        class="secondary-btn"
+                        onclick="addCustomerOrderItem()">
+
+                        + Add Item
+
+                    </button>
+
+                </div>
+
+
+                <div id="customerOrderItems">
+
+                    <div class="customer-order-item">
+
+                        <input
+                            type="text"
+                            class="customer-item-name"
+                            placeholder="Food name">
+
+                        <input
+                            type="number"
+                            class="customer-item-quantity"
+                            min="1"
+                            placeholder="Qty">
+
+                        <input
+                            type="number"
+                            class="customer-item-price"
+                            min="0"
+                            step="0.01"
+                            placeholder="Price">
+
+                        <button
+                            class="remove-item-btn"
+                            onclick="removeCustomerOrderItem(this)">
+
+                            ×
+
+                        </button>
+
+                    </div>
+
+                </div>
+
+
+                <div class="order-total">
+
+                    <span>
+                        Estimated Total
+                    </span>
+
+                    <strong id="customerOrderTotal">
+                        ₹0.00
+                    </strong>
+
+                </div>
+
+
+                <div class="form-actions">
+
+                    <button
+                        class="primary-btn"
+                        onclick="createCustomerOrder()">
+
+                        Place Order
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+            <div class="info-card">
+
+                <strong>
+                    Important
+                </strong>
+
+                <p>
+                    You can place multiple orders for the
+                    same occupied table. The restaurant will
+                    combine them when generating the final bill.
+                </p>
+
+            </div>
+
+        </section>
+
+
+        <!-- =================================
+             ORDERS PAGE
+        ================================== -->
+
+        <section
+            id="ordersPage"
+            class="page hidden">
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        My Orders
+                    </h2>
+
+                    <p>
+                        View your food orders.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="table-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>Order ID</th>
+                            <th>Table</th>
+                            <th>Order Time</th>
+                            <th>Items</th>
+                            <th>Status</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="customerOrderBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+    </main>
+
+
+    <script src="/customer.js?v=2"></script>
+
+</body>
+
+</html>

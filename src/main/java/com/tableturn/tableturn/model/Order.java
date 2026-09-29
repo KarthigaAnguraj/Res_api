@@ -1,6 +1,8 @@
 package com.tableturn.tableturn.model;
 
 import jakarta.persistence.*;
+
+import java.time.LocalDateTime;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -14,6 +16,8 @@ public class Order {
 
     private String status;
 
+    private LocalDateTime orderTime;
+
     @ManyToOne
     @JoinColumn(name = "table_id")
     private RestaurantTable table;
@@ -22,7 +26,8 @@ public class Order {
     @JoinColumn(name = "order_id")
     private List<OrderItem> items = new ArrayList<>();
 
-    public Order() {}
+    public Order() {
+    }
 
     public Long getId() {
         return id;
@@ -38,6 +43,14 @@ public class Order {
 
     public void setStatus(String status) {
         this.status = status;
+    }
+
+    public LocalDateTime getOrderTime() {
+        return orderTime;
+    }
+
+    public void setOrderTime(LocalDateTime orderTime) {
+        this.orderTime = orderTime;
     }
 
     public RestaurantTable getTable() {

@@ -1,0 +1,1175 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0">
+
+    <title>Table Turn - Restaurant Management</title>
+
+    <link
+        rel="stylesheet"
+        href="/css/style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- =====================================================
+         SIDEBAR
+    ====================================================== -->
+
+    <aside class="sidebar">
+
+        <div class="logo-section">
+
+            <div class="logo-icon">
+                TT
+            </div>
+
+            <div>
+
+                <h2>
+                    Table Turn
+                </h2>
+
+                <span>
+                    Restaurant Management
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <nav class="navigation">
+
+            <button
+                class="nav-item active"
+                onclick="showPage('dashboard')">
+
+                <span>▣</span>
+                Dashboard
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('tables')">
+
+                <span>▤</span>
+                Tables
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('reservations')">
+
+                <span>◷</span>
+                Reservations
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('orders')">
+
+                <span>🛒</span>
+                Orders
+
+            </button>
+
+
+            <button
+                class="nav-item"
+                onclick="showPage('bills')">
+
+                <span>₹</span>
+                Bills
+
+            </button>
+
+        </nav>
+
+
+        <div class="sidebar-bottom">
+
+            <div class="admin-profile">
+
+                <div class="profile-icon">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <small>
+                        Administrator
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+
+    <!-- =====================================================
+         MAIN CONTENT
+    ====================================================== -->
+
+    <main class="main-content">
+
+
+        <!-- HEADER -->
+
+        <header class="top-header">
+
+            <div>
+
+                <h1 id="pageTitle">
+                    Dashboard
+                </h1>
+
+                <p id="pageSubtitle">
+                    Welcome to Table Turn
+                </p>
+
+            </div>
+
+
+            <div class="header-profile">
+
+                <div class="profile-icon">
+                    A
+                </div>
+
+                <div>
+
+                    <strong>
+                        Admin
+                    </strong>
+
+                    <small>
+                        Restaurant Admin
+                    </small>
+
+                </div>
+
+            </div>
+
+        </header>
+
+
+
+        <!-- =================================================
+             DASHBOARD
+        ================================================== -->
+
+        <section
+            id="dashboardPage"
+            class="page-section">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Dashboard
+                    </h2>
+
+                    <p>
+                        Overview of your restaurant
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="dashboard-cards">
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-icon">
+                        ▤
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Total Tables
+                        </span>
+
+                        <strong id="totalTables">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-icon">
+                        ✓
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Available
+                        </span>
+
+                        <strong id="availableTables">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-icon">
+                        ◷
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Reserved
+                        </span>
+
+                        <strong id="reservedTables">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="dashboard-card">
+
+                    <div class="card-icon">
+                        ●
+                    </div>
+
+                    <div>
+
+                        <span>
+                            Occupied
+                        </span>
+
+                        <strong id="occupiedTables">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+            </div>
+
+
+
+            <!-- QUICK ACTIONS -->
+
+            <div class="quick-actions">
+
+                <h3>
+                    Quick Actions
+                </h3>
+
+
+                <div class="quick-action-grid">
+
+                    <button
+                        onclick="showPage('tables')">
+
+                        Manage Tables
+
+                    </button>
+
+
+                    <button
+                        onclick="openReservationModal()">
+
+                        New Reservation
+
+                    </button>
+
+
+                    <button
+                        onclick="openOrderModal()">
+
+                        New Order
+
+                    </button>
+
+
+                    <button
+                        onclick="showPage('bills')">
+
+                        View Bills
+
+                    </button>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- =================================================
+             TABLES
+        ================================================== -->
+
+        <section
+            id="tablesPage"
+            class="page-section hidden">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Restaurant Tables
+                    </h2>
+
+                    <p>
+                        Manage all restaurant tables
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openAddModal()">
+
+                    + Add Table
+
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Table</th>
+                            <th>Capacity</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="tableBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             RESERVATIONS
+        ================================================== -->
+
+        <section
+            id="reservationsPage"
+            class="page-section hidden">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Reservations
+                    </h2>
+
+                    <p>
+                        Manage restaurant reservations
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openReservationModal()">
+
+                    + New Reservation
+
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Customer</th>
+                            <th>Table</th>
+                            <th>Start Time</th>
+                            <th>End Time</th>
+                            <th>Party</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="reservationBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             ORDERS
+        ================================================== -->
+
+        <section
+            id="ordersPage"
+            class="page-section hidden">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Orders
+                    </h2>
+
+                    <p>
+                        Manage customer orders
+                    </p>
+
+                </div>
+
+
+                <button
+                    class="primary-btn"
+                    onclick="openOrderModal()">
+
+                    + New Order
+
+                </button>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>ID</th>
+                            <th>Table</th>
+                            <th>Order Time</th>
+                            <th>Items</th>
+                            <th>Status</th>
+                            <th>Action</th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="orderBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+        </section>
+
+
+
+        <!-- =================================================
+             BILLS
+        ================================================== -->
+
+        <section
+            id="billsPage"
+            class="page-section hidden">
+
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Billing
+                    </h2>
+
+                    <p>
+                        Generate bills and view billing history
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- TABLES READY FOR BILLING -->
+
+            <div class="quick-actions">
+
+                <h3>
+                    Tables Ready for Billing
+                </h3>
+
+                <p>
+                    Generate a bill for an occupied table.
+                </p>
+
+
+                <div
+                    id="billingTables"
+                    class="quick-action-grid">
+
+                </div>
+
+            </div>
+
+
+
+            <!-- BILL HISTORY -->
+
+            <div class="page-heading">
+
+                <div>
+
+                    <h2>
+                        Bill History
+                    </h2>
+
+                    <p>
+                        Previously generated bills
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="content-card">
+
+                <table>
+
+                    <thead>
+
+                        <tr>
+
+                            <th>
+                                Bill ID
+                            </th>
+
+                            <th>
+                                Table
+                            </th>
+
+                            <th>
+                                Total Amount
+                            </th>
+
+                            <th>
+                                Bill Time
+                            </th>
+
+                        </tr>
+
+                    </thead>
+
+
+                    <tbody id="billBody">
+
+                    </tbody>
+
+                </table>
+
+            </div>
+
+
+        </section>
+
+
+    </main>
+
+</div>
+
+
+
+<!-- =====================================================
+     ADD TABLE MODAL
+====================================================== -->
+
+<div
+    id="addModal"
+    class="modal hidden">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Add Table
+                </h2>
+
+                <p class="modal-subtitle">
+                    Create a new restaurant table
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeAddModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Table Number
+            </label>
+
+            <input
+                type="number"
+                id="tableNumber"
+                placeholder="Example: 6"
+                min="1">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Capacity
+            </label>
+
+            <input
+                type="number"
+                id="capacity"
+                placeholder="Example: 4"
+                min="1">
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                onclick="closeAddModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                onclick="createTable()">
+
+                Create Table
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     EDIT TABLE MODAL
+====================================================== -->
+
+<div
+    id="editModal"
+    class="modal hidden">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    Edit Table
+                </h2>
+
+                <p class="modal-subtitle">
+                    Update table information
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeEditModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <input
+            type="hidden"
+            id="editId">
+
+
+        <div class="form-group">
+
+            <label>
+                Table Number
+            </label>
+
+            <input
+                type="number"
+                id="editTableNumber"
+                min="1">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Capacity
+            </label>
+
+            <input
+                type="number"
+                id="editCapacity"
+                min="1">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Status
+            </label>
+
+            <select id="editStatus">
+
+                <option value="FREE">
+                    FREE
+                </option>
+
+                <option value="RESERVED">
+                    RESERVED
+                </option>
+
+                <option value="OCCUPIED">
+                    OCCUPIED
+                </option>
+
+            </select>
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                onclick="closeEditModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                onclick="saveUpdate()">
+
+                Save Changes
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     RESERVATION MODAL
+====================================================== -->
+
+<div
+    id="reservationModal"
+    class="modal hidden">
+
+
+    <div class="modal-content">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    New Reservation
+                </h2>
+
+                <p class="modal-subtitle">
+                    Reserve a table for a customer
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeReservationModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Table ID
+            </label>
+
+            <input
+                type="number"
+                id="reservationTableId"
+                placeholder="Example: 1"
+                min="1">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Customer Name
+            </label>
+
+            <input
+                type="text"
+                id="customerName"
+                placeholder="Enter customer name">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Reservation Date
+            </label>
+
+            <input
+                type="date"
+                id="reservationDate">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Start Time
+            </label>
+
+            <input
+                type="time"
+                id="reservationTime">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                End Time
+            </label>
+
+            <input
+                type="time"
+                id="reservationEndTime">
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Party Size
+            </label>
+
+            <input
+                type="number"
+                id="partySize"
+                placeholder="Number of people"
+                min="1">
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                onclick="closeReservationModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                onclick="createReservation()">
+
+                Create Reservation
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<!-- =====================================================
+     ORDER MODAL
+====================================================== -->
+
+<div
+    id="orderModal"
+    class="modal hidden">
+
+
+    <div class="modal-content order-modal">
+
+
+        <div class="modal-header">
+
+            <div>
+
+                <h2>
+                    New Order
+                </h2>
+
+                <p class="modal-subtitle">
+                    Create an order for a seated table
+                </p>
+
+            </div>
+
+
+            <button
+                onclick="closeOrderModal()">
+
+                ×
+
+            </button>
+
+        </div>
+
+
+        <div class="form-group">
+
+            <label>
+                Table ID
+            </label>
+
+            <input
+                type="number"
+                id="orderTableId"
+                placeholder="Example: 1"
+                min="1">
+
+        </div>
+
+
+        <div class="items-heading">
+
+            <h3>
+                Order Items
+            </h3>
+
+
+            <button
+                class="add-item-btn"
+                onclick="addOrderItem()">
+
+                + Add Item
+
+            </button>
+
+        </div>
+
+
+        <div id="orderItems">
+
+
+            <div class="order-item">
+
+                <input
+                    type="text"
+                    class="item-name"
+                    placeholder="Item name">
+
+
+                <input
+                    type="number"
+                    class="item-quantity"
+                    placeholder="Qty"
+                    min="1">
+
+
+                <input
+                    type="number"
+                    class="item-price"
+                    placeholder="Price"
+                    min="0"
+                    step="0.01">
+
+
+                <button
+                    class="remove-item"
+                    onclick="removeOrderItem(this)">
+
+                    ×
+
+                </button>
+
+            </div>
+
+
+        </div>
+
+
+        <div class="modal-actions">
+
+            <button
+                class="secondary-btn"
+                onclick="closeOrderModal()">
+
+                Cancel
+
+            </button>
+
+
+            <button
+                class="primary-btn"
+                onclick="createOrder()">
+
+                Create Order
+
+            </button>
+
+        </div>
+
+    </div>
+
+</div>
+
+
+
+<script src="/js/app.js"></script>
+
+
+</body>
+
+</html>

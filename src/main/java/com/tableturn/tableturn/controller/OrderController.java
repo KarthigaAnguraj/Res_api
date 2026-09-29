@@ -18,16 +18,27 @@ public class OrderController {
 
     @PostMapping("/create")
     public Order createOrder(@RequestBody Order order) {
+
         return orderService.createOrder(order);
     }
 
     @GetMapping("/getAll")
     public List<Order> getAllOrders() {
+
         return orderService.getAllOrders();
     }
 
     @GetMapping("/getById/{id}")
     public Order getOrderById(@PathVariable Long id) {
+
         return orderService.getOrderById(id);
+    }
+
+    @DeleteMapping("/delete/{id}")
+    public String deleteOrder(@PathVariable Long id) {
+
+        orderService.deleteOrder(id);
+
+        return "Order deleted successfully";
     }
 }

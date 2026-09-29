@@ -1,0 +1,694 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    background: #f5f6fa;
+    color: #17233d;
+}
+
+/* =========================
+   SIDEBAR
+========================= */
+
+.sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    width: 250px;
+    height: 100vh;
+    background: #101827;
+    color: white;
+    display: flex;
+    flex-direction: column;
+    z-index: 100;
+}
+
+.brand {
+    height: 92px;
+    padding: 20px 24px;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    border-bottom: 1px solid #202a3b;
+}
+
+.brand-logo {
+    width: 44px;
+    height: 44px;
+    background: #ff7417;
+    border-radius: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.brand h2 {
+    font-size: 18px;
+    color: white;
+}
+
+.brand p {
+    font-size: 11px;
+    color: #8e99ad;
+    margin-top: 4px;
+}
+
+.navigation {
+    padding: 22px 15px;
+}
+
+.nav-item {
+    width: 100%;
+    height: 46px;
+    margin-bottom: 7px;
+    border: none;
+    border-radius: 9px;
+    background: transparent;
+    color: #c6cedb;
+    display: flex;
+    align-items: center;
+    gap: 13px;
+    padding: 0 18px;
+    font-size: 14px;
+    cursor: pointer;
+    text-align: left;
+    transition: 0.2s;
+}
+
+.nav-item:hover {
+    background: #1d2738;
+    color: white;
+}
+
+.nav-item.active {
+    background: #ff7417;
+    color: white;
+}
+
+.nav-item span {
+    width: 18px;
+    text-align: center;
+    font-size: 15px;
+}
+
+.sidebar-bottom {
+    margin-top: auto;
+    padding: 18px;
+    border-top: 1px solid #202a3b;
+}
+
+.customer-profile {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+
+.profile-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    background: #fff0e6;
+    color: #ff7417;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: bold;
+}
+
+.customer-profile strong {
+    font-size: 14px;
+}
+
+.customer-profile small {
+    display: block;
+    margin-top: 4px;
+    color: #8994a8;
+    font-size: 11px;
+}
+
+
+/* =========================
+   MAIN
+========================= */
+
+.main-content {
+    margin-left: 250px;
+    min-height: 100vh;
+    padding: 0 35px;
+}
+
+.top-header {
+    height: 92px;
+    border-bottom: 1px solid #e1e5eb;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.top-header h1 {
+    font-size: 28px;
+    font-weight: 700;
+    color: #17233d;
+}
+
+.top-header p {
+    margin-top: 5px;
+    color: #7c879b;
+    font-size: 14px;
+}
+
+.restaurant-name {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.restaurant-icon {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    background: #fff0e6;
+    color: #ff7417;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 13px;
+    font-weight: bold;
+}
+
+.restaurant-name strong {
+    font-size: 14px;
+}
+
+.restaurant-name small {
+    display: block;
+    color: #8994a8;
+    font-size: 11px;
+    margin-top: 3px;
+}
+
+
+/* =========================
+   PAGE
+========================= */
+
+.page {
+    padding: 32px 0 60px;
+}
+
+.hidden {
+    display: none !important;
+}
+
+.page-heading {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 25px;
+}
+
+.page-heading h2 {
+    font-size: 23px;
+    color: #17233d;
+}
+
+.page-heading p {
+    margin-top: 5px;
+    font-size: 14px;
+    color: #7b8699;
+}
+
+
+/* =========================
+   HERO
+========================= */
+
+.hero-card {
+    min-height: 250px;
+    background: white;
+    border: 1px solid #e2e5eb;
+    border-radius: 15px;
+    padding: 38px 42px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    box-shadow: 0 3px 12px rgba(20, 30, 50, 0.04);
+    margin-bottom: 35px;
+}
+
+.hero-small {
+    color: #ff7417 !important;
+    font-size: 14px;
+    font-weight: bold;
+    margin-bottom: 8px;
+}
+
+.hero-card h2 {
+    font-size: 34px;
+    margin-bottom: 10px;
+}
+
+.hero-card p {
+    color: #707b8f;
+    font-size: 15px;
+    margin-bottom: 22px;
+}
+
+.hero-icon {
+    width: 150px;
+    height: 150px;
+    border-radius: 50%;
+    background: #fff3ea;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 70px;
+}
+
+
+/* =========================
+   ACTION CARDS
+========================= */
+
+.section-title {
+    font-size: 20px;
+    margin-bottom: 18px;
+}
+
+.action-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 18px;
+}
+
+.action-card {
+    background: white;
+    border: 1px solid #e2e5eb;
+    border-radius: 13px;
+    padding: 25px;
+    min-height: 170px;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.action-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 8px 22px rgba(20, 30, 50, 0.08);
+    border-color: #ffdcc5;
+}
+
+.action-icon {
+    width: 48px;
+    height: 48px;
+    border-radius: 10px;
+    background: #fff2e9;
+    color: #ff7417;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 23px;
+    margin-bottom: 17px;
+}
+
+.action-card h3 {
+    font-size: 16px;
+    margin-bottom: 7px;
+}
+
+.action-card p {
+    color: #7b8699;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   BUTTONS
+========================= */
+
+.primary-btn {
+    border: none;
+    background: #ff7417;
+    color: white;
+    padding: 11px 19px;
+    border-radius: 8px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+    transition: 0.2s;
+}
+
+.primary-btn:hover {
+    background: #e9650c;
+}
+
+.secondary-btn {
+    border: none;
+    background: #eef2ff;
+    color: #4857a5;
+    padding: 10px 15px;
+    border-radius: 7px;
+    font-size: 13px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.secondary-btn:hover {
+    background: #e2e8ff;
+}
+
+.delete-btn {
+    border: none;
+    background: #fff0f0;
+    color: #df3c3c;
+    padding: 8px 13px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 12px;
+}
+
+.delete-btn:hover {
+    background: #ffe1e1;
+}
+
+
+/* =========================
+   FORM CARD
+========================= */
+
+.form-card {
+    background: white;
+    border: 1px solid #e2e5eb;
+    border-radius: 14px;
+    padding: 30px;
+    box-shadow: 0 3px 12px rgba(20, 30, 50, 0.04);
+}
+
+.form-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 22px;
+}
+
+.form-group {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+}
+
+.form-group label {
+    font-size: 13px;
+    font-weight: bold;
+    color: #34405a;
+}
+
+.form-group input,
+.form-group select {
+    width: 100%;
+    height: 44px;
+    padding: 0 13px;
+    border: 1px solid #d8dde6;
+    border-radius: 7px;
+    background: white;
+    color: #17233d;
+    font-size: 13px;
+    outline: none;
+}
+
+.form-group input:focus,
+.form-group select:focus {
+    border-color: #ff7417;
+    box-shadow: 0 0 0 3px rgba(255, 116, 23, 0.08);
+}
+
+.form-actions {
+    margin-top: 28px;
+    display: flex;
+    justify-content: flex-end;
+}
+
+
+/* =========================
+   INFO CARD
+========================= */
+
+.info-card {
+    margin-top: 20px;
+    background: #fff8f3;
+    border: 1px solid #ffe0ca;
+    border-radius: 10px;
+    padding: 17px 20px;
+}
+
+.info-card strong {
+    font-size: 13px;
+}
+
+.info-card p {
+    margin-top: 6px;
+    color: #747f91;
+    font-size: 13px;
+    line-height: 1.5;
+}
+
+
+/* =========================
+   TABLE CARD
+========================= */
+
+.table-card {
+    width: 100%;
+    background: white;
+    border: 1px solid #e2e5eb;
+    border-radius: 14px;
+    overflow: hidden;
+    box-shadow: 0 3px 12px rgba(20, 30, 50, 0.04);
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+thead {
+    background: #f8f9fb;
+}
+
+th {
+    padding: 15px;
+    text-align: left;
+    color: #68748a;
+    font-size: 12px;
+    font-weight: bold;
+    border-bottom: 1px solid #e4e7ed;
+    white-space: nowrap;
+}
+
+td {
+    padding: 15px;
+    font-size: 13px;
+    color: #303c54;
+    border-bottom: 1px solid #edf0f4;
+}
+
+tbody tr:hover {
+    background: #fafbfc;
+}
+
+tbody tr:last-child td {
+    border-bottom: none;
+}
+
+
+/* =========================
+   STATUS
+========================= */
+
+.status {
+    display: inline-block;
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 10px;
+    font-weight: bold;
+    text-transform: uppercase;
+}
+
+.status-reserved {
+    background: #fff0c8;
+    color: #a46c00;
+}
+
+.status-order {
+    background: #e1edff;
+    color: #3568bc;
+}
+
+.status-free {
+    background: #d9f8e5;
+    color: #168a4b;
+}
+
+
+/* =========================
+   ORDER ITEMS
+========================= */
+
+.items-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-top: 28px;
+    margin-bottom: 15px;
+}
+
+.items-header h3 {
+    font-size: 16px;
+}
+
+.customer-order-item {
+    display: grid;
+    grid-template-columns: 2fr 1fr 1fr 45px;
+    gap: 10px;
+    margin-bottom: 12px;
+}
+
+.customer-order-item input {
+    height: 43px;
+    border: 1px solid #d8dde6;
+    border-radius: 7px;
+    padding: 0 12px;
+    font-size: 13px;
+    outline: none;
+}
+
+.customer-order-item input:focus {
+    border-color: #ff7417;
+}
+
+.remove-item-btn {
+    border: none;
+    background: #fff0f0;
+    color: #df3c3c;
+    border-radius: 7px;
+    font-size: 20px;
+    cursor: pointer;
+}
+
+.order-total {
+    margin-top: 22px;
+    padding-top: 18px;
+    border-top: 1px solid #e2e5eb;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.order-total span {
+    font-size: 14px;
+    color: #657086;
+}
+
+.order-total strong {
+    font-size: 20px;
+    color: #ff7417;
+}
+
+
+/* =========================
+   EMPTY TABLE
+========================= */
+
+.empty-state {
+    padding: 55px 20px;
+    text-align: center;
+}
+
+.empty-state h3 {
+    font-size: 18px;
+    margin-bottom: 7px;
+}
+
+.empty-state p {
+    color: #8993a5;
+    font-size: 13px;
+}
+
+
+/* =========================
+   RESPONSIVE
+========================= */
+
+@media (max-width: 1100px) {
+
+    .action-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+}
+
+@media (max-width: 800px) {
+
+    .sidebar {
+        width: 210px;
+    }
+
+    .main-content {
+        margin-left: 210px;
+        padding: 0 20px;
+    }
+
+    .form-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-icon {
+        display: none;
+    }
+
+}
+
+@media (max-width: 600px) {
+
+    .sidebar {
+        position: relative;
+        width: 100%;
+        height: auto;
+    }
+
+    .main-content {
+        margin-left: 0;
+        padding: 0 15px;
+    }
+
+    .top-header {
+        height: auto;
+        padding: 20px 0;
+    }
+
+    .restaurant-name {
+        display: none;
+    }
+
+    .action-grid {
+        grid-template-columns: 1fr;
+    }
+
+    .hero-card {
+        padding: 25px;
+    }
+
+    .customer-order-item {
+        grid-template-columns: 1fr;
+    }
+
+    .table-card {
+        overflow-x: auto;
+    }
+
+}
